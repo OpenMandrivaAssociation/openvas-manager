@@ -24,6 +24,8 @@ line technology and will replace the classic OpenVAS Client.
 %setup -qn %name-%version
 %patch0 -p0
 
+sed -i -e 's#-Werror##' `grep -rl Werror *|grep CMakeLists.txt`
+
 %build
 %cmake
 %make
