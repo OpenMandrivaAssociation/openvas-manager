@@ -1,6 +1,6 @@
 Summary: 	Vulnerability Management with OpenVAS Manager
 Name:		openvas-manager
-Version:	1.0.4
+Version:	2.0.2
 Release:	%mkrel 1
 Source:		http://wald.intevation.org/frs/download.php/561/%name-%version.tar.gz
 Patch0:		openvas-manager-1.0.3-fix-linkage.patch
@@ -8,7 +8,7 @@ Group:		System/Configuration/Networking
 Url:		http://www.openvas.org
 License:	GPLv2+
 BuildRoot:	%{_tmppath}/%name-%{version}-root
-BuildRequires:	openvas-devel >= 3.1.0
+BuildRequires:	openvas-devel >= 4.0
 BuildRequires:	gnutls-devel
 BuildRequires:	sqlite3-devel
 BuildRequires:	glib2-devel
@@ -38,7 +38,6 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(-,root,root)
 %config(noreplace) %_sysconfdir/openvas/openvasmd_log.conf
-%_sysconfdir/openvas/openvasmd/xsl/CPE.xsl
-%_sysconfdir/openvas/openvasmd/xsl/ITG.xsl
 %_sbindir/openvasmd
-%_datadir/openvas/openvasmd_report_html.xsl
+%_mandir/man8/openvasmd.8*
+%_datadir/openvas/openvasmd
