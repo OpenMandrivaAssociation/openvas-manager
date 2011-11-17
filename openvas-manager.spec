@@ -1,19 +1,19 @@
 Summary: 	Vulnerability Management with OpenVAS Manager
 Name:		openvas-manager
 Version:	2.0.4
-Release:	%mkrel 1
+Release:	%mkrel 2
+License:	GPLv2+
+Group:		System/Configuration/Networking
+URL:		http://www.openvas.org
 Source:		http://wald.intevation.org/frs/download.php/561/%name-%version.tar.gz
 Patch0:		openvas-manager-1.0.3-fix-linkage.patch
-Group:		System/Configuration/Networking
-Url:		http://www.openvas.org
-License:	GPLv2+
-BuildRoot:	%{_tmppath}/%name-%{version}-root
 BuildRequires:	openvas-devel >= 4.0
 BuildRequires:	gnutls-devel
 BuildRequires:	sqlite3-devel
 BuildRequires:	glib2-devel
 BuildRequires:	doxygen perl-SQL-Translator
 BuildRequires:	cmake
+BuildRoot:	%{_tmppath}/%{name}-%{version}-%{release}-buildroot
 
 %description
 The OpenVAS Manager is a layer between the OpenVAS Scanner and various
@@ -31,11 +31,12 @@ sed -i -e 's#-Werror##' `grep -rl Werror *|grep CMakeLists.txt`
 %make
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
+
 %makeinstall_std -C build
 
 %clean
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
