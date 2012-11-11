@@ -1,0 +1,10 @@
+--- src/tests/CMakeLists.txt.link	2010-11-28 04:48:15.000000000 +0000
++++ src/tests/CMakeLists.txt	2010-11-28 04:48:42.000000000 +0000
+@@ -63,6 +63,7 @@
+ 
+ add_library (common common.c)
+ set_target_properties (common PROPERTIES COMPILE_FLAGS "${GLIB_CFLAGS} ${OVAS_CFLAGS}")
++target_link_libraries(common ${GLIB_LDFLAGS})
+ 
+ ## Tests of support libraries
+ 
