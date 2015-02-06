@@ -1,7 +1,7 @@
 Summary: 	Vulnerability Management with OpenVAS Manager
 Name:		openvas-manager
 Version:	2.0.5
-Release:	1
+Release:	2
 Source0:		http://wald.intevation.org/frs/download.php/561/%name-%version.tar.gz
 source1:	.abf.yml
 Patch0:		openvas-manager-1.0.3-fix-linkage.patch
