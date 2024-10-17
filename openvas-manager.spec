@@ -6,7 +6,7 @@ Source0:		http://wald.intevation.org/frs/download.php/561/%name-%version.tar.gz
 source1:	.abf.yml
 Patch0:		openvas-manager-1.0.3-fix-linkage.patch
 Group:		System/Configuration/Networking
-Url:		http://www.openvas.org
+Url:		https://www.openvas.org
 License:	GPLv2+
 BuildRequires:	openvas-devel >= 4.0
 BuildRequires:	pkgconfig(gnutls)
